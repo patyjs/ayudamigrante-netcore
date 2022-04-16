@@ -93,6 +93,9 @@ body {
 
     .mfooter .end {
         margin-top: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between
     }
 
         .mfooter .end .col-md {
@@ -115,6 +118,12 @@ body {
                 color: white;
                 font-weight: 700;
             }
+
+
+        @media (max-width: 576px) {
+            
+        }
+
 
     .mfooter div .col-md {
         padding: 0 !important;
@@ -311,12 +320,14 @@ body {
     .home-center-img-splash-continer .img-splash-1 {
         display: flex;
         flex-direction: column-reverse;
-        background-image: url("/images/REDCT2020_Portraits-7-small.jpeg");
+        justify-content: center;
+        background-image: url("/images/5a20121a4.png");
         width: 100%;
-        height: 500px;
+        height: 822px;
         mix-blend-mode: screen;
+        background-repeat:no-repeat;
     }
 
         .home-center-img-splash-continer .img-splash-1 .content {
-            padding-bottom: 100px;
+            
         }
