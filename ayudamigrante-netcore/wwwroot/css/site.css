@@ -120,9 +120,7 @@ body {
             }
 
 
-        @media (max-width: 576px) {
-            
-        }
+
 
 
     .mfooter div .col-md {
@@ -156,18 +154,18 @@ body {
             padding: 0;
         }
 
-        .mfooter div .col-md ul li {
-            text-align: initial;
-        }
-
-            .mfooter div .col-md ul li a {
-                color: white;
-                font-weight: 300;
+            .mfooter div .col-md ul li {
+                text-align: initial;
             }
 
-                .mfooter div .col-md ul li a :hover {
-                    text-decoration: none;
+                .mfooter div .col-md ul li a {
+                    color: white;
+                    font-weight: 300;
                 }
+
+                    .mfooter div .col-md ul li a :hover {
+                        text-decoration: none;
+                    }
 
     .mfooter .col-md p {
         text-align: initial;
@@ -186,6 +184,8 @@ body {
         .mfooter .col-md form label {
             color: white;
             text-align: initial;
+            font-size: 16pt;
+            font-weight: 300;
         }
 
         .mfooter .col-md form small {
@@ -234,6 +234,16 @@ body {
                 color: GrayText;
                 font-size: larger;
             }
+
+@media (max-width: 576px) {
+    .mnav {
+        justify-content: center;
+    }
+
+        .mnav .brand {
+            margin-right: 0 !important;
+        }
+}
 
 .home-bg-parallax {
     background-image: url("/images/REDCT2020_Portraits-7-small.jpeg");
@@ -292,6 +302,7 @@ body {
 
     .home-center-continer ul {
         list-style-type: none;
+        padding: 0;
     }
 
         .home-center-continer ul li p {
@@ -325,9 +336,32 @@ body {
         width: 100%;
         height: 822px;
         mix-blend-mode: screen;
-        background-repeat:no-repeat;
+        background-repeat: no-repeat;
     }
 
         .home-center-img-splash-continer .img-splash-1 .content {
-            
         }
+
+.privacy-terms {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: justify;
+}
+
+    .privacy-terms h1 {
+        font-weight: 600;
+        color: darkblue;
+    }
+
+    .privacy-terms h3 {
+        font-weight: 600;
+        color: darkblue;
+    }
+
+    .privacy-terms p {
+        color: GrayText;
+        font-size: 14pt;
+        font-weight: 300;
+    }
