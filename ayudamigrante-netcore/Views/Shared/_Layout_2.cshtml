@@ -16,13 +16,13 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Inicio</a>
+                        <a class="nav-link" href="@Url.Action("","")">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="@Url.Action("Terms","Home")">Terminos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                        <a class="nav-link" href="@Url.Action("Privacy","Home")">Privacidad</a>
                     </li>
                     <li class="nav-item contrast">
                         <a class="nav-link" href="#">Iniciar sesion</a>
@@ -91,7 +91,7 @@
                 <h2>AM</h2>
             </div>
             <div class="term-links">
-                <a href="#">Terminos</a>
+                <a href="@Url.Action("Terms", "Home")">Terminos</a>
                 <a href="@Url.Action("Privacy","Home")">Privacidad</a>
             </div>
         </div>
