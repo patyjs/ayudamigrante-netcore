@@ -164,6 +164,16 @@ main {
     }
 }
 
+.button {
+    padding: 6px 12px;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.margin-r-16 {
+    margin-right: 16px;
+}
+
 .btn-enfasis {
     background-color: darkblue;
     padding: 12px;
@@ -222,6 +232,10 @@ main {
     margin-right: 16px;
 }
 
+.feed-main .feed-publication-form form .row-buttons {
+    margin-left: 56px;
+}
+
 .feed-main .feed-publication-form form .row-buttons .post-submit {
     display: flex;
     flex-direction: row;
@@ -246,7 +260,7 @@ main {
 .feed-main .feed-history {
     display: flex;
     margin-top: 16px;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .feed-main .feed-history .post {
@@ -277,6 +291,7 @@ main {
 .feed-main .feed-history .post .head .post-info .author {
     font-weight: 500;
 }
+
 .feed-main .feed-history .post .head .post-info .dateTime {
     font-size: small;
     color: gray;
@@ -290,8 +305,28 @@ main {
     margin-top: 16px;
 }
 
-.feed-main .feed-history .post .body .description{
+.feed-main .feed-history .post .body .description p {
+    margin-bottom: 8px;
+}
 
+.feed-main .feed-history .post .body .media img,
+video {
+    width: 100%;
+}
+
+.feed-main .feed-history .post .counters {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-left: 56px;
+    margin-top: 8px;
+}
+
+.feed-main .feed-history .post .counters label {
+    margin-right: 8px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    color: gray;
 }
 
 .feed-main .feed-history .post .row-actions {
@@ -302,10 +337,15 @@ main {
     margin-top: 16px;
 }
 
-.feed-main .feed-history .post .row-actions .post-action .btn {
-    background-color: whitesmoke !important;
+.feed-main .feed-history .post .row-actions .post-action {
+    width: 100%;
 }
 
-.feed-main .feed-history .post .row-actions .post-action .btn .bi {
+.feed-main .feed-history .post .row-actions .post-action .button {
+    background-color: whitesmoke !important;
+    width: 100%;
+}
+
+.feed-main .feed-history .post .row-actions .post-action .button .bi {
     margin-right: 8px;
 }
