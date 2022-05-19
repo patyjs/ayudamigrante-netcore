@@ -3,8 +3,21 @@
     Layout = "~/Views/Shared/_Layout_SocialApp.cshtml";
 }
 
+@* <div>
+    @(await
+    Html.RenderComponentAsync<ayudamigrante_netcore.Views.Shared.AppComponent.NewPost>(RenderMode.ServerPrerendered,new
+    {
+    Data= " Hello World " }))
+    </div> *@
+
 <div class="feed-main">
     <div class="col-md-8">
+        @* <div>
+            @(await
+            Html.RenderComponentAsync<ayudamigrante_netcore.Views.Shared.AppComponent.NewPost>(RenderMode.ServerPrerendered,new
+            {
+            Data= " Hello World " }))
+            </div> *@
         <div class="feed-publication-form">
             <form>
                 <div class="row-1">
@@ -15,11 +28,50 @@
                 </div>
 
                 <div class="row-buttons">
-                    <button class="btn" type="button"><i class="bi bi-images cl-green"></i> Foto</button>
-                    <button class="btn" type="button"><i class="bi bi-camera-reels-fill cl-red"></i> Video</button>
-                    <button class="btn" type="button"><i class="bi bi-pin-map-fill cl-violet"></i> Ubicacion</button>
+                    <div class="post-options">
+                        <button class="btn" type="button"><i class="bi bi-images cl-green"></i> Multimedia</button>
+                    </div>
+
+                    <div class="post-submit">
+                        <button class="btn" type="button"><i class="bi bi-send-fill"></i> Publicar</button>
+                    </div>
                 </div>
             </form>
+        </div>
+
+        <div class="feed-history">
+            <div class="post">
+                <div class="head">
+                    <div>
+                        <img class="feed-publication-profile-pic" src="/images/foto.jpeg">
+                    </div>
+                    <div class="post-info">
+                        <label class="author">Salazar Santiago Erika Sofia</label>
+                        <label class="dateTime">Publicado el Miercoloes 18 de Mayo, 07:30 PM</label>
+                    </div>
+                </div>
+
+                <div class="body">
+                    <div class="description">
+                        <p>Hola a todos los miembros de esta comunidad, esto es solo un post de prueba</p>
+                    </div>
+                    <div class="media">
+                        <img src="/images/5a20121a4.png" alt="Demo image">
+                    </div>
+                </div>
+
+                <div class="row-actions">
+                    <div class="post-action">
+                        <button class="btn" type="button"><i class="bi bi-hand-thumbs-up-fill"></i>Me gusta</button>
+                    </div>
+                    <div class="post-action">
+                        <button class="btn" type="button"><i class="bi bi-share-fill"></i>Compartir</button>
+                    </div>
+                    <div class="post-action">
+                        <button class="btn" type="button"><i class="bi bi-chat-right-dots-fill"></i>Comentar</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

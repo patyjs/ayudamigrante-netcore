@@ -12,9 +12,9 @@ a {
     color: #0366d6;
 }
 
-    a:hover {
-        text-decoration: none;
-    }
+a:hover {
+    text-decoration: none;
+}
 
 .btn-primary {
     color: #fff;
@@ -22,7 +22,8 @@ a {
     border-color: #1861ac;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
     color: #fff;
     background-color: #1b6ec2;
     border-color: #1861ac;
@@ -74,6 +75,10 @@ main {
     background-color: whitesmoke;
 }
 
+.cl-white {
+    color: white;
+}
+
 .cl-green {
     color: green;
 }
@@ -86,12 +91,17 @@ main {
     color: blueviolet;
 }
 
+.cl-darkblue {
+    color: darkblue;
+}
+
 .footer {
     position: absolute;
     bottom: 0;
     width: 100%;
     white-space: nowrap;
-    line-height: 60px; /* Vertically center the text there */
+    line-height: 60px;
+    /* Vertically center the text there */
 }
 
 .mnav {
@@ -101,53 +111,53 @@ main {
     padding-right: 100px;
 }
 
-    .mnav .brand {
-        color: black;
-        font-weight: 500;
-        font-size: 32px;
-    }
+.mnav .brand {
+    color: black;
+    font-weight: 500;
+    font-size: 32px;
+}
 
-    .mnav .mnav-right {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-    }
+.mnav .mnav-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
 
-    .mnav .mnav-left {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-    }
+.mnav .mnav-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
 
-    .mnav ul {
-        display: flex !important;
-        margin-right: 50px !important;
-        margin-left: auto !important;
-    }
+.mnav ul {
+    display: flex !important;
+    margin-right: 50px !important;
+    margin-left: auto !important;
+}
 
-        .mnav ul li {
-            justify-content: flex-end !important;
-            padding-left: 25px;
-        }
+.mnav ul li {
+    justify-content: flex-end !important;
+    padding-left: 25px;
+}
 
-            .mnav ul li.contrast a {
-                color: darkblue !important;
-                font-weight: 500;
-            }
+.mnav ul li.contrast a {
+    color: darkblue !important;
+    font-weight: 500;
+}
 
-            .mnav ul li a {
-                color: GrayText;
-                font-size: larger;
-            }
+.mnav ul li a {
+    color: GrayText;
+    font-size: larger;
+}
 
 @media (max-width: 576px) {
     .mnav {
         justify-content: center;
     }
 
-        .mnav .brand {
-            margin-right: 0 !important;
-        }
+    .mnav .brand {
+        margin-right: 0 !important;
+    }
 
     .mobile-hidden {
         display: none;
@@ -177,39 +187,125 @@ main {
     padding-left: 5%;
 }
 
-    .feed-main .feed-publication-form form {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        background-color: white;
-        padding: 16px;
-        border-radius: 8px;
-    }
+.feed-main .feed-publication-form form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    padding: 16px;
+    border-radius: 8px;
+}
 
-        .feed-main .feed-publication-form form .row-1 {
-            display: flex;
-        }
+.feed-main .feed-publication-form form .row-1 {
+    display: flex;
+}
 
-            .feed-main .feed-publication-form form .row-1 textarea {
-                border: 0px;
-            }
+.feed-main .feed-publication-form form .row-1 textarea {
+    border: 0px;
+}
 
-        .feed-main .feed-publication-form form .row-buttons {
-            display: flex;
-            flex-direction: row;
-            margin-top: 16px;
-        }
+.feed-main .feed-publication-form form .row-buttons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 16px;
+}
 
-            .feed-main .feed-publication-form form .row-buttons .btn {
-                background-color: whitesmoke;
-                height: 40px;
-                margin-right: 16px;
-            }
+.feed-main .feed-publication-form form .row-buttons .post-options {
+    display: flex;
+    flex-direction: row;
+}
 
-    .feed-main .feed-publication-profile-pic {
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        object-fit: cover;
-        margin-right: 16px;
-    }
+.feed-main .feed-publication-form form .row-buttons .post-options .btn {
+    background-color: whitesmoke;
+    height: 40px;
+    width: 150px;
+    margin-right: 16px;
+}
+
+.feed-main .feed-publication-form form .row-buttons .post-submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.feed-main .feed-publication-form form .row-buttons .post-submit .btn {
+    width: 25%;
+    color: whitesmoke;
+    background-color: darkblue;
+}
+
+.feed-main .feed-publication-profile-pic {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 16px;
+}
+
+.feed-main .feed-history {
+    display: flex;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.feed-main .feed-history .post {
+    display: flex;
+    flex: 100;
+    flex-direction: column;
+    background-color: white;
+    padding: 16px !important;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.feed-main .feed-history .post .head {
+    display: flex;
+    flex-direction: row;
+}
+
+.feed-main .feed-history .post .head .post-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.feed-main .feed-history .post .head .post-info label {
+    margin: 0px;
+}
+
+.feed-main .feed-history .post .head .post-info .author {
+    font-weight: 500;
+}
+.feed-main .feed-history .post .head .post-info .dateTime {
+    font-size: small;
+    color: gray;
+}
+
+.feed-main .feed-history .post .body {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: 56px;
+    margin-top: 16px;
+}
+
+.feed-main .feed-history .post .body .description{
+
+}
+
+.feed-main .feed-history .post .row-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 56px;
+    margin-top: 16px;
+}
+
+.feed-main .feed-history .post .row-actions .post-action .btn {
+    background-color: whitesmoke !important;
+}
+
+.feed-main .feed-history .post .row-actions .post-action .btn .bi {
+    margin-right: 8px;
+}

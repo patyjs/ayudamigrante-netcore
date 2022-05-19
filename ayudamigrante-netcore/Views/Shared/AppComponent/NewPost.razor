@@ -1,0 +1,37 @@
+@using Microsoft.AspNetCore.Components
+<h3>Blazor Component in MVC</h3>
+<button @onclick="Test" class="btn btn-dark">Click to get answer</button>
+<br />
+<div>@Data </div>
+
+<div class="feed-publication-form">
+    <form>
+        <div class="row-1">
+            <div>
+                <img class="feed-publication-profile-pic" src="/images/foto.jpeg" />
+            </div>
+            <textarea class="form-control" placeholder="Escribe tus pensamientos aqui" rows="3"></textarea>
+        </div>
+
+        <div class="row-buttons">
+            <div class="post-options">
+                <button class="btn" type="button"><i class="bi bi-images cl-green"></i> Foto</button>
+                <button class="btn" type="button"><i class="bi bi-camera-reels-fill cl-red"></i> Video</button>
+                <button class="btn" type="button"><i class="bi bi-pin-map-fill cl-violet"></i> Ubicacion</button>
+            </div>
+
+            <div class="post-submit">
+                <button class="btn" type="button"><i class="bi bi-send-fill"></i> Publicar</button>
+            </div>
+        </div>
+    </form>
+</div>
+@code {
+    [Parameter]
+    public string Data { get; set; } = string.Empty;
+    private void Test()
+    {
+        Data = "Button Clicked";
+    }
+}
+
