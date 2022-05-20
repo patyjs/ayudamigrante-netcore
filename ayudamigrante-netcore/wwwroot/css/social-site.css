@@ -163,7 +163,7 @@ main {
         display: none;
     }
 }
-
+/* ESTILOS GENERALES */
 .button {
     padding: 6px 12px;
     border: 1px solid transparent;
@@ -174,6 +174,35 @@ main {
     margin-right: 16px;
 }
 
+.margin-0 {
+    margin: 0;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-align-center {
+    align-items: center;
+}
+
+.profile-pic-2 {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 16px;
+}
+
+.text-left {
+    text-align: start;
+}
 .btn-enfasis {
     background-color: darkblue;
     padding: 12px;
@@ -289,10 +318,12 @@ main {
 }
 
 .feed-main .feed-history .post .head .post-info .author {
+    text-align: start;
     font-weight: 500;
 }
 
 .feed-main .feed-history .post .head .post-info .dateTime {
+    text-align: start;
     font-size: small;
     color: gray;
 }
@@ -307,6 +338,7 @@ main {
 
 .feed-main .feed-history .post .body .description p {
     margin-bottom: 8px;
+    text-align: start;
 }
 
 .feed-main .feed-history .post .body .media img,
@@ -348,4 +380,41 @@ video {
 
 .feed-main .feed-history .post .row-actions .post-action .button .bi {
     margin-right: 8px;
+}
+
+.feed-sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.feed-sidebar .container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    background-color: white;
+    padding: 16px;
+}
+
+.feed-sidebar .container .links {
+    margin-top: 16px;
+}
+
+.feed-sidebar .container .links .link {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right: 16px;
+    margin-top: 8px;
+    margin-left: 66px;
+    text-align: end;
+    color: black;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+.feed-sidebar .container .links .link:hover {
+    background-color: whitesmoke;
+}
+
+.feed-sidebar .container .links .link .bi {
+    margin-left: 8px;
 }
