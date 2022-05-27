@@ -177,8 +177,24 @@ main {
     border-radius: 0.25rem;
 }
 
+.button-2 {
+    padding: 6px 12px;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    background-color: whitesmoke;
+    color: black;
+}
+.button-2:hover {
+    background-color: rgb(215, 215, 215);
+    color: black;
+}
+
 .margin-r-16 {
     margin-right: 16px;
+}
+
+.margin-top-8 {
+    margin-top: 8px;
 }
 
 .margin-0 {
@@ -214,6 +230,17 @@ main {
 }
 .flex-100 {
     flex: 100;
+}
+@media (max-width: 576px) {
+    .flex-10, .flex-20, .flex-30, .flex-40, 
+    .flex-50, .flex-60, .flex-70, .flex-80, .flex-90 {
+        flex: 100;
+    }
+
+    .flex-row {
+        display: flex;
+        flex-direction: column !important;
+    }
 }
 
 .flex-row {
@@ -256,6 +283,12 @@ main {
     padding: 12px;
 }
 
+.span {
+    margin-top: 8px;
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+/*/////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////*/
 .feed-main {
     width: 100%;
     height: 100%;
@@ -488,4 +521,27 @@ video {
 .user-profile-card-name h5{
     margin: 0;
     font-size: 18px;
+}
+
+.user-profile-card-info-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+}
+.user-profile-card-info-section label {
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    text-align: left;
+}
+.user-profile-card-info-section label i {
+    margin-right: 4px;
+    font-size: 16px;
+}
+.user-profile-card-info-section p {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    margin-left: 19px;
+    text-align: left;
 }
