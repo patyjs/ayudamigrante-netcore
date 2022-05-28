@@ -3,10 +3,10 @@
     Layout = "~/Views/Shared/_Layout_SocialApp.cshtml";
 }
 
-<div class="flex-row user-profile-container">
+<div class="flex-row-responsive user-profile-container">
     <div class="flex-20 user-profile-card">
         <div class="user-profile-card-picture">
-            <img src="/images/foto-paty.jpg"/>
+            <img src="/images/foto-paty.jpg" />
         </div>
         <div class="user-profile-card-name">
             <h5>Sara Patricia Jaimes Santos</h5>
@@ -28,10 +28,38 @@
             <label><i class="bi bi-calendar3"></i>Membro desde</label>
             <p>26 de Mayo 2021 (1 año)</p>
         </div>
+        <div class="user-profile-card-info-section">
+            <label><i class="bi bi-command"></i>Rol</label>
+            <p>Voluntario</p>
+        </div>
         <span class="span"></span>
         <a class="button-2 margin-top-8" href="#">Editar informacion</a>
     </div>
-    <div class="flex-80">
+
+    <div class="flex-80 flex-col margin-l-16-small-hide margin-top-16-small">
+        <div class="padding-16 bg-white">
+            <form class="flex-col">
+                <div class="flex-row">
+                    <div class="mobile-hidden">
+                        <img class="profile-pic-2" src="/images/foto-paty.jpg" />
+                    </div>
+                    <div class="flex-col flex-100">
+                        <textarea class="form-control" placeholder="Escribe tus pensamientos aqui" rows="3"></textarea>
+                        <div class="flex-row margin-top-16 justify-space-between">
+                            <div class="post-options">
+                                <button class="button-2" type="button"><i class="bi bi-images cl-green"></i>
+                                    Multimedia</button>
+                            </div>
+
+                            <div class="post-submit">
+                                <button class="button-2 bg-darkblue cl-white" type="button"><i
+                                        class="bi bi-send-fill"></i> Publicar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
         <label>text</label>
     </div>
 </div>

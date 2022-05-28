@@ -75,26 +75,6 @@ main {
     background-color: whitesmoke;
 }
 
-.cl-white {
-    color: white;
-}
-
-.cl-green {
-    color: green;
-}
-
-.cl-red {
-    color: red;
-}
-
-.cl-violet {
-    color: blueviolet;
-}
-
-.cl-darkblue {
-    color: darkblue;
-}
-
 .footer {
     position: absolute;
     bottom: 0;
@@ -171,6 +151,35 @@ main {
 }
 
 /* ESTILOS GENERALES */
+
+.cl-white {
+    color: white !important;
+}
+
+.cl-green {
+    color: green !important;
+}
+
+.cl-red {
+    color: red !important;
+}
+
+.cl-violet {
+    color: blueviolet !important;
+}
+
+.cl-darkblue {
+    color: darkblue !important;
+}
+
+.bg-white {
+    background-color: white !important;
+}
+
+.bg-darkblue {
+    background-color: darkblue !important;
+}
+
 .button {
     padding: 6px 12px;
     border: 1px solid transparent;
@@ -184,18 +193,33 @@ main {
     background-color: whitesmoke;
     color: black;
 }
+
 .button-2:hover {
     background-color: rgb(215, 215, 215);
     color: black;
+}
+
+.margin-l-16 {
+    margin-left: 16px;
+}
+
+.margin-l-16-small-hide {
+    margin-left: 16px;
 }
 
 .margin-r-16 {
     margin-right: 16px;
 }
 
+
 .margin-top-8 {
     margin-top: 8px;
 }
+
+.margin-top-16 {
+    margin-top: 16px;
+}
+
 
 .margin-0 {
     margin: 0;
@@ -204,57 +228,91 @@ main {
 .flex-10 {
     flex: 10;
 }
+
 .flex-20 {
     flex: 20;
 }
+
 .flex-30 {
     flex: 30;
 }
+
 .flex-40 {
     flex: 40;
 }
+
 .flex-50 {
     flex: 50;
 }
+
 .flex-60 {
     flex: 60;
 }
+
 .flex-70 {
     flex: 70;
 }
+
 .flex-80 {
     flex: 80;
 }
+
 .flex-90 {
     flex: 90;
 }
+
 .flex-100 {
     flex: 100;
 }
+
 @media (max-width: 576px) {
-    .flex-10, .flex-20, .flex-30, .flex-40, 
-    .flex-50, .flex-60, .flex-70, .flex-80, .flex-90 {
+    .flex-10,
+    .flex-20,
+    .flex-30,
+    .flex-40,
+    .flex-50,
+    .flex-60,
+    .flex-70,
+    .flex-80,
+    .flex-90 {
         flex: 100;
     }
 
-    .flex-row {
+    .flex-row-responsive {
         display: flex;
         flex-direction: column !important;
     }
+
+    .margin-l-16-small-hide {
+        margin-left: 0 !important;
+    }
+
+    .margin-top-16-small {
+        margin-top: 16px;
+    }
 }
 
-.flex-row {
+.flex-row-responsive {
     display: flex;
     flex-direction: row;
 }
 
+.flex-row {
+    display: flex;
+    flex-direction: row !important;
+}
+
 .flex-col {
     display: flex;
-    flex-direction: column;
+    flex-direction: column !important;
 }
 
 .flex-align-center {
     align-items: center;
+}
+
+.justify-space-between {
+    justify-content: space-between;
 }
 
 .profile-pic-2 {
@@ -283,10 +341,15 @@ main {
     padding: 12px;
 }
 
+.padding-16 {
+    padding: 16px;
+}
+
 .span {
     margin-top: 8px;
     border-bottom: 1px solid rgb(205, 205, 205);
 }
+
 /*/////////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////////*/
 .feed-main {
@@ -495,6 +558,8 @@ video {
     margin-left: 8px;
 }
 
+/*/////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////*/
 /* ESTILOS USER-RPOFILE PAGE */
 .user-profile-container {
     margin: 16px 5%;
@@ -518,7 +583,7 @@ video {
     margin-top: 8px;
 }
 
-.user-profile-card-name h5{
+.user-profile-card-name h5 {
     margin: 0;
     font-size: 18px;
 }
@@ -528,16 +593,19 @@ video {
     flex-direction: column;
     margin-top: 8px;
 }
+
 .user-profile-card-info-section label {
     font-size: 12px;
     font-weight: 400;
     margin: 0;
     text-align: left;
 }
+
 .user-profile-card-info-section label i {
     margin-right: 4px;
     font-size: 16px;
 }
+
 .user-profile-card-info-section p {
     font-size: 14px;
     font-weight: 500;
