@@ -152,6 +152,10 @@ main {
 
 /* ESTILOS GENERALES */
 
+textarea {
+    border: 0px !important;
+}
+
 .cl-white {
     color: white !important;
 }
@@ -266,6 +270,7 @@ main {
 }
 
 @media (max-width: 576px) {
+
     .flex-10,
     .flex-20,
     .flex-30,
@@ -315,6 +320,14 @@ main {
     justify-content: space-between;
 }
 
+.profile-pic-1 {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 16px;
+}
+
 .profile-pic-2 {
     border-radius: 50%;
     width: 50px;
@@ -345,9 +358,23 @@ main {
     padding: 16px;
 }
 
+.padding-top-8 {
+    padding-top: 8px;
+}
+
 .span {
     margin-top: 8px;
     border-bottom: 1px solid rgb(205, 205, 205);
+}
+
+.span-2 {
+    margin-top: 16px;
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+
+.span-2-top {
+    margin-top: 16px;
+    border-top: 1px solid rgb(205, 205, 205);
 }
 
 /*/////////////////////////////////////////////////////////*/
@@ -427,7 +454,7 @@ main {
     flex-direction: column;
 }
 
-.feed-main .feed-history .post {
+.post {
     display: flex;
     flex: 100;
     flex-direction: column;
@@ -437,33 +464,33 @@ main {
     margin-bottom: 16px;
 }
 
-.feed-main .feed-history .post .head {
+.post .head {
     display: flex;
     flex-direction: row;
 }
 
-.feed-main .feed-history .post .head .post-info {
+.post .head .post-info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.feed-main .feed-history .post .head .post-info label {
+.post .head .post-info label {
     margin: 0px;
 }
 
-.feed-main .feed-history .post .head .post-info .author {
+.post .head .post-info .author {
     text-align: start;
     font-weight: 500;
 }
 
-.feed-main .feed-history .post .head .post-info .dateTime {
+.post .head .post-info .dateTime {
     text-align: start;
     font-size: small;
     color: gray;
 }
 
-.feed-main .feed-history .post .body {
+.post .body {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -471,17 +498,17 @@ main {
     margin-top: 16px;
 }
 
-.feed-main .feed-history .post .body .description p {
+.post .body .description p {
     margin-bottom: 8px;
     text-align: start;
 }
 
-.feed-main .feed-history .post .body .media img,
+.post .body .media img,
 video {
     width: 100%;
 }
 
-.feed-main .feed-history .post .counters {
+.post .counters {
     display: flex;
     align-items: flex-start;
     flex-direction: row;
@@ -489,14 +516,14 @@ video {
     margin-top: 8px;
 }
 
-.feed-main .feed-history .post .counters label {
+.post .counters label {
     margin-right: 8px;
     margin-bottom: 0px;
     font-size: 14px;
     color: gray;
 }
 
-.feed-main .feed-history .post .row-actions {
+.post .row-actions {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -504,16 +531,16 @@ video {
     margin-top: 16px;
 }
 
-.feed-main .feed-history .post .row-actions .post-action {
+.post .row-actions .post-action {
     width: 100%;
 }
 
-.feed-main .feed-history .post .row-actions .post-action .button {
+.post .row-actions .post-action .button {
     background-color: whitesmoke !important;
     width: 100%;
 }
 
-.feed-main .feed-history .post .row-actions .post-action .button .bi {
+.post .row-actions .post-action .button .bi {
     margin-right: 8px;
 }
 
