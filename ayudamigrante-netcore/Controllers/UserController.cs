@@ -24,6 +24,12 @@ namespace ayudamigrante_netcore.Controllers
             return View();
         }
 
+        public IActionResult EditProfile(string id)
+        {
+            Console.WriteLine($"Entrada por direccion url{id}");
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
