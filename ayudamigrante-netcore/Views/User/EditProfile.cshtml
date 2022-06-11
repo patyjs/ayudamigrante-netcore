@@ -9,9 +9,19 @@
     <div class="flex-60 flex-col">
         <h2 class="text-left">Editar perfil</h2>
         <div class="flex-col bg-white border-rad-8 padding-16">
-            <h4 class="text-left margin-bottom-16"><i class="bi bi-person-circle padding-right-8"></i>Informacion personal</h4>
-            @using (Html.BeginForm("", "", null, FormMethod.Post, false, new { @class="flex-col"}))
+            <h4 class="text-left margin-bottom-16"><i class="bi bi-person-circle padding-right-8"></i>Informacion
+                personal</h4>
+            @using (Html.BeginForm("", "", null, FormMethod.Post, false, new { @class = "flex-col" }))
             {
+                <div class="flex-row-responsive margin-top-8">
+                    <label class="text-left flex-40" for="">Foto de perfil</label>
+                    <div class="flex-60">
+                        <img class="user-profile-picture" src="/images/foto-paty.jpg">
+                        <button class="form-control margin-top-8" type="button"><i
+                            class="bi bi-camera-fill padding-right-8"></i>Cambiar foto</button>
+                    </div>
+                </div>
+                <span class="span"></span>
                 <div class="flex-row-responsive margin-top-8">
                     <label class="text-left flex-40" for="">Nombres</label>
                     <input type="text" class="form-control flex-60" value="Sara Patricia">
@@ -26,7 +36,7 @@
                 </div>
                 <div class="flex-row-responsive margin-top-8">
                     <label class="text-left flex-40" for="">Mi cumpleaños</label>
-                    <input type="date" class="form-control flex-60" value="01/01/1990">
+                    <input type="date" class="form-control flex-60" value="01/01/1990" date="01/01/1990">
                 </div>
                 <span class="span"></span>
                 <div class="flex-row-responsive margin-top-8">

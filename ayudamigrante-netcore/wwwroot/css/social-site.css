@@ -602,6 +602,12 @@ video {
 /*/////////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////////*/
 /* ESTILOS USER-RPOFILE PAGE */
+.user-profile-picture {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
 .user-profile-container {
     margin: 16px 5%;
 }
