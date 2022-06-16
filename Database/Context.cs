@@ -36,7 +36,7 @@ namespace Database
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Account>().ToTable("Account");
-            modelBuilder.Entity<Account>().HasIndex(x => x.Email).IsUnique();
+            //modelBuilder.Entity<Account>().HasIndex(x => x.Email).IsUnique();
 
             modelBuilder.Entity<Comment>().ToTable("Comment");
             modelBuilder.Entity<Post>().ToTable("Post");
@@ -44,8 +44,8 @@ namespace Database
             modelBuilder.Entity<Session>().ToTable("Session");
             modelBuilder.Entity<UserRol>().ToTable("UserRol");
 
-            SeedUserRols(modelBuilder);
-            SeedAccount(modelBuilder);
+            //SeedUserRols(modelBuilder);
+            //SeedAccount(modelBuilder);
 
             // modelBuilder.Entity<IOTDevice>().ToTable("IOTDevice");
             // modelBuilder.Entity<IOTDevice>().HasIndex(x => x.MacAddress).IsUnique();
@@ -61,7 +61,7 @@ namespace Database
                 {
                     IDAccount = "38B9F907-5961-4589-90E8-9EC020B7D40D",
                     Email = "angel.g.j.reyes@gmail.com",
-                    PasswordHash ="",
+                    PasswordHash = Codebehind.Security.SHA256Hash("Angel100"),
                     IDUserRol = "38B9F907-5961-4589-90E8-9EC020B7D40D",
                     CreatedAt = DateTime.UtcNow,
                     IsVerified = true,
