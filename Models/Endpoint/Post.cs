@@ -11,7 +11,7 @@ namespace Models.Endpoint
         [Required] public string IDAccount { get; set; }
         [Required] public DateTime DateTimeUTC { get; set; }
         [Required] public string Body { get; set; }
-        // public virtual List<Account> LikedBy { get; set; }
-        // public virtual List<Comment> Comments { get; set; }
+        public virtual List<Account> Likes { get; set; }
+        public virtual List<Comment> Comments { get; set; }
     }
 }

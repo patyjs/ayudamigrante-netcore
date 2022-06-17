@@ -36,16 +36,19 @@ namespace Database
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Account>().ToTable("Account");
-            //modelBuilder.Entity<Account>().HasIndex(x => x.Email).IsUnique();
+            modelBuilder.Entity<Account>().HasIndex(x => x.Email).IsUnique();
 
             modelBuilder.Entity<Comment>().ToTable("Comment");
-            modelBuilder.Entity<Post>().ToTable("Post");
+
+            modelBuilder.Entity<Post>().ToTable("Post").HasMany(x => x.Likes);
+            modelBuilder.Entity<Post>().ToTable("Post").HasMany(x => x.Comments);
+
             modelBuilder.Entity<Profile>().ToTable("Profile");
             modelBuilder.Entity<Session>().ToTable("Session");
             modelBuilder.Entity<UserRol>().ToTable("UserRol");
 
-            //SeedUserRols(modelBuilder);
-            //SeedAccount(modelBuilder);
+            SeedUserRols(modelBuilder);
+            SeedAccount(modelBuilder);
 
             // modelBuilder.Entity<IOTDevice>().ToTable("IOTDevice");
             // modelBuilder.Entity<IOTDevice>().HasIndex(x => x.MacAddress).IsUnique();

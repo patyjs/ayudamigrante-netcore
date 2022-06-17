@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -14,6 +15,7 @@ namespace Models.Endpoint
         public bool RequirePasswordReset { get; set; }
         [Required] public DateTime CreatedAt { get; set; }
         public UserRol UserRol { get; set; }
+        public List<Post> LikedPosts { get; set; }
     }
     public class UserRol {
         [Key] public string IDUserRol { get; set; }
