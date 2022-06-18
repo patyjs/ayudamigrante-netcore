@@ -19,13 +19,13 @@ namespace Database.Migrations
 
             modelBuilder.Entity("AccountPost", b =>
                 {
-                    b.Property<string>("LikedPostsIDProfile")
+                    b.Property<string>("LikedPostsIDPost")
                         .HasColumnType("varchar(767)");
 
                     b.Property<string>("LikesIDAccount")
                         .HasColumnType("varchar(767)");
 
-                    b.HasKey("LikedPostsIDProfile", "LikesIDAccount");
+                    b.HasKey("LikedPostsIDPost", "LikesIDAccount");
 
                     b.HasIndex("LikesIDAccount");
 
@@ -72,7 +72,7 @@ namespace Database.Migrations
                         new
                         {
                             IDAccount = "38B9F907-5961-4589-90E8-9EC020B7D40D",
-                            CreatedAt = new DateTime(2022, 6, 17, 1, 15, 49, 154, DateTimeKind.Utc).AddTicks(2497),
+                            CreatedAt = new DateTime(2022, 6, 18, 18, 19, 11, 564, DateTimeKind.Utc).AddTicks(5036),
                             Email = "angel.g.j.reyes@gmail.com",
                             IDUserRol = "38B9F907-5961-4589-90E8-9EC020B7D40D",
                             IsVerified = true,
@@ -112,7 +112,7 @@ namespace Database.Migrations
 
             modelBuilder.Entity("Models.Endpoint.Post", b =>
                 {
-                    b.Property<string>("IDProfile")
+                    b.Property<string>("IDPost")
                         .HasColumnType("varchar(767)");
 
                     b.Property<string>("Body")
@@ -126,7 +126,7 @@ namespace Database.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.HasKey("IDProfile");
+                    b.HasKey("IDPost");
 
                     b.ToTable("Post");
                 });
@@ -227,7 +227,7 @@ namespace Database.Migrations
                 {
                     b.HasOne("Models.Endpoint.Post", null)
                         .WithMany()
-                        .HasForeignKey("LikedPostsIDProfile")
+                        .HasForeignKey("LikedPostsIDPost")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

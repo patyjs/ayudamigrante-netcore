@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Database.Migrations
 {
-    public partial class initcommentupdate : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,14 +11,14 @@ namespace Database.Migrations
                 name: "Post",
                 columns: table => new
                 {
-                    IDProfile = table.Column<string>(type: "varchar(767)", nullable: false),
+                    IDPost = table.Column<string>(type: "varchar(767)", nullable: false),
                     IDAccount = table.Column<string>(type: "text", nullable: false),
                     DateTimeUTC = table.Column<DateTime>(type: "datetime", nullable: false),
                     Body = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Post", x => x.IDProfile);
+                    table.PrimaryKey("PK_Post", x => x.IDPost);
                 });
 
             migrationBuilder.CreateTable(
@@ -76,12 +76,12 @@ namespace Database.Migrations
                 name: "AccountPost",
                 columns: table => new
                 {
-                    LikedPostsIDProfile = table.Column<string>(type: "varchar(767)", nullable: false),
+                    LikedPostsIDPost = table.Column<string>(type: "varchar(767)", nullable: false),
                     LikesIDAccount = table.Column<string>(type: "varchar(767)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AccountPost", x => new { x.LikedPostsIDProfile, x.LikesIDAccount });
+                    table.PrimaryKey("PK_AccountPost", x => new { x.LikedPostsIDPost, x.LikesIDAccount });
                     table.ForeignKey(
                         name: "FK_AccountPost_Account_LikesIDAccount",
                         column: x => x.LikesIDAccount,
@@ -89,10 +89,10 @@ namespace Database.Migrations
                         principalColumn: "IDAccount",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_AccountPost_Post_LikedPostsIDProfile",
-                        column: x => x.LikedPostsIDProfile,
+                        name: "FK_AccountPost_Post_LikedPostsIDPost",
+                        column: x => x.LikedPostsIDPost,
                         principalTable: "Post",
-                        principalColumn: "IDProfile",
+                        principalColumn: "IDPost",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -119,7 +119,7 @@ namespace Database.Migrations
                         name: "FK_Comment_Post_IDPost",
                         column: x => x.IDPost,
                         principalTable: "Post",
-                        principalColumn: "IDProfile",
+                        principalColumn: "IDPost",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -160,7 +160,7 @@ namespace Database.Migrations
             migrationBuilder.InsertData(
                 table: "Account",
                 columns: new[] { "IDAccount", "CreatedAt", "Email", "IDUserRol", "IsVerified", "PasswordHash", "RequirePasswordReset" },
-                values: new object[] { "38B9F907-5961-4589-90E8-9EC020B7D40D", new DateTime(2022, 6, 17, 1, 15, 49, 154, DateTimeKind.Utc).AddTicks(2497), "angel.g.j.reyes@gmail.com", "38B9F907-5961-4589-90E8-9EC020B7D40D", true, "40a914448eff394e9cb44b9042f2e48c52727a49a7ff2f5062bd199014003645", false });
+                values: new object[] { "38B9F907-5961-4589-90E8-9EC020B7D40D", new DateTime(2022, 6, 18, 18, 19, 11, 564, DateTimeKind.Utc).AddTicks(5036), "angel.g.j.reyes@gmail.com", "38B9F907-5961-4589-90E8-9EC020B7D40D", true, "40a914448eff394e9cb44b9042f2e48c52727a49a7ff2f5062bd199014003645", false });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Account_Email",

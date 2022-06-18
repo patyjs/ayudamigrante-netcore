@@ -8,7 +8,7 @@
     <form>
         <div class="row-1">
             <div>
-                <img class="feed-publication-profile-pic" src="/images/foto.jpeg" />
+                <img class="feed-publication-profile-pic" src="" />
             </div>
             <textarea class="form-control" placeholder="Escribe tus pensamientos aqui" rows="3"></textarea>
         </div>
@@ -26,6 +26,7 @@
         </div>
     </form>
 </div>
+
 @code {
     [Parameter]
     public string Data { get; set; } = string.Empty;
@@ -34,4 +35,3 @@
         Data = "Button Clicked";
     }
 }
-

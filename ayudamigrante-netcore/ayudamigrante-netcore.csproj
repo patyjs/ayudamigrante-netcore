@@ -28,4 +28,8 @@
   <ItemGroup>
     <Folder Include="Views\Feed\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj" />
+    <ProjectReference Include="..\Repositories\Repositories.csproj" />
+  </ItemGroup>
 </Project>

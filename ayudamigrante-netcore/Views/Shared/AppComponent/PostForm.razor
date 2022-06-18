@@ -1,0 +1,33 @@
+﻿@using Microsoft.AspNetCore.Components
+@using ayudamigrante_netcore.AppComponent
+
+<div class="padding-16 bg-white">
+    <form class="flex-col">
+        <div class="flex-row">
+            <div class="mobile-hidden">
+                <img class="profile-pic-1" src="/images/foto-paty.jpg" />
+            </div>
+            <div class="flex-col flex-100">
+                <textarea class="form-control" placeholder="Escribe tus pensamientos aqui" rows="3"></textarea>
+                <div class="flex-row margin-top-16 justify-space-between">
+                    <div class="post-options">
+                        <button class="button-2" type="button"><i class="bi bi-images cl-green"></i>Multimedia</button>
+                    </div>
+
+                    <div class="post-submit">
+                        <button class="button-2 bg-darkblue cl-white" type="button" @onclick="ReadForm" id="ReadForm"><i class="bi bi-send-fill"></i>Publicar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@code {
+    [Parameter] public string Body { get; set; } = string.Empty;
+    private void ReadForm()
+    {
+        Console.WriteLine("Button Click");
+        PostFormComponent.SubmitForm("Hola", "Mundo");
+    }
+}

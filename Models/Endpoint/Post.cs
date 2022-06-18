@@ -7,7 +7,7 @@ namespace Models.Endpoint
 {
     public class Post
     {
-        [Key] public string IDProfile { get; set; }
+        [Key] public string IDPost { get; set; }
         [Required] public string IDAccount { get; set; }
         [Required] public DateTime DateTimeUTC { get; set; }
         [Required] public string Body { get; set; }

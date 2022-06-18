@@ -19,8 +19,9 @@ namespace ayudamigrante_netcore.Controllers
         }
 
         [Route("/u")]
-        public IActionResult U()
+        public IActionResult U(string id)
         {
+            Console.WriteLine($"Entrada: {id}");
             return View();
         }
 

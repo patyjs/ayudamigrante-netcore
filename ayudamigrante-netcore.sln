@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ayudamigrante-netcore", "ayudamigrante-netcore\ayudamigrante-netcore.csproj", "{DD0EA3BD-27FF-477B-BF17-BF99007910D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ayudamigrante-netcore", "ayudamigrante-netcore\ayudamigrante-netcore.csproj", "{DD0EA3BD-27FF-477B-BF17-BF99007910D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{1A7D85AF-BAB3-4383-A5CF-67AD8AF716CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database", "Database\Database.csproj", "{1A7D85AF-BAB3-4383-A5CF-67AD8AF716CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{1D5F6A47-F01D-48F0-87B5-E96733A18A10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositories\Repositories.csproj", "{1D5F6A47-F01D-48F0-87B5-E96733A18A10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{2DA4FBD2-C517-490F-A1B7-4A0AE8F833BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{2DA4FBD2-C517-490F-A1B7-4A0AE8F833BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
