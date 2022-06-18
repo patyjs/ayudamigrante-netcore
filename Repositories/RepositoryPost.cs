@@ -1,5 +1,6 @@
 ﻿using Database;
 using Models.Endpoint;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace Repositories
         {
             using (var db = new Context())
             {
-                db.Posts.Add(p);
+                db.Posts.Update(p);
                 return db.SaveChanges();
             }
         }
