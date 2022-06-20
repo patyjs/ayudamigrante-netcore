@@ -14,7 +14,7 @@ namespace Repositories
         {
             using (var db = new Context())
             {
-                db.Posts.Update(p);
+                db.Posts.Add(p);
                 return db.SaveChanges();
             }
         }
