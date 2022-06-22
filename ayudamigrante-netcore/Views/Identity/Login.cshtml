@@ -1,0 +1,33 @@
+@{
+    ViewData["Title"] = "Feed";
+    Layout = "~/Views/Shared/_Layout_SocialApp.cshtml";
+}
+
+<div class="flex-row padding-horizontal-5p">
+    <span class="flex-60 mobile-hidden"></span>
+    <div class="flex-col flex-40 bg-white margin-top-16 padding-16">
+        <div>
+            <h2 class="text-left">Iniciar sesion</h2>
+        </div>
+
+        <span class="span"></span>
+
+        <div>
+            @using (Html.BeginForm("", "Identity", FormMethod.Post, new { @class="flex-col margin-top-16" }))
+            {
+                <div class="flex-row-responsive">
+                    <label class="flex-30 text-left bold">Correo electronico</label>
+                    <input type="email" class="form-control flex-70" placeholder="your@@email.com"/>
+                </div>
+                <div class="flex-row-responsive margin-top-8">
+                    <label class="flex-30 text-left bold">Contraseña</label>
+                    <input type="password" class="form-control flex-70" placeholder="********"/>
+                </div>
+                <p class="margin-top-8">Olvidaste tu contraseña? <a href="#"><b>Haz click aqui</b></a> Para recuperar tu cuenta</p>
+                
+                <a class="button-2 margin-top-50 bold" href="#">Registrarse</a>
+                <button type="submit" class="button-2 bg-darkblue cl-white  margin-top-8 bold-2">Iniciar sesion</button>
+            }
+        </div>
+    </div>
+</div>

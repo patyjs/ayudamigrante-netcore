@@ -9,7 +9,7 @@ using System.Linq.Expressions;
 
 namespace Repositories
 {
-    class RepositoryAccount
+    public class RepositoryAccount
     {
         /// <summary>
         /// Agrega o actualiza una entidad
