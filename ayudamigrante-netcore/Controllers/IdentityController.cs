@@ -56,6 +56,19 @@ namespace ayudamigrante_netcore.Controllers
             return View();
         }
 
+        public IActionResult Logout(string sessionToken)
+        {
+            Session session = RepositorySession.Get(x => x.SessionToken == sessionToken);
+            session.SessionToken = null;
+            RepositorySession.AddOrUpdate(session);
+
+            CookiesHandler.ClearCookie(HttpContext, "sessionToken");
+            CookiesHandler.ClearCookie(HttpContext, "idAccount");
+
+            return Redirect(Url.Action("Index", "Home"));
+        }
+
+        [HttpPost]
         public IActionResult SubmitLogin(string email, string password)
         {
             if (RepositoryAccount.IsPasswordCorrect(email, password))
@@ -71,6 +84,11 @@ namespace ayudamigrante_netcore.Controllers
                     session.LastLogin = DateTime.UtcNow;
                     session.SessionToken = Security.SHA256Hash(Guid.NewGuid().ToString());
                     RepositorySession.AddOrUpdate(session);
+
+                    CookiesHandler.AddCookie(HttpContext, "sessionToken", session.SessionToken);
+                    CookiesHandler.AddCookie(HttpContext, "idAccount", account.IDAccount);
+
+                    Console.WriteLine($"Sesion renovada: {account.IDAccount}, Token de sesion creado: {session.IDSession} ({session.SessionToken}) @ {session.LastLogin.ToLocalTime().ToLongTimeString()}");
                 }
                 else
                 {
@@ -84,8 +102,12 @@ namespace ayudamigrante_netcore.Controllers
 
                     RepositorySession.AddOrUpdate(session);
 
-                    HttpContext.Response.Cookies.Append("sessionToken", session.SessionToken);
-                    HttpContext.Response.Cookies.Append("idAccount", account.IDAccount);
+                    CookiesHandler.AddCookie(HttpContext, "sessionToken", session.SessionToken);
+                    CookiesHandler.AddCookie(HttpContext, "idAccount", account.IDAccount);
+                    // HttpContext.Response.Cookies.Append("sessionToken", session.SessionToken);
+                    // HttpContext.Response.Cookies.Append("idAccount", account.IDAccount);
+
+                    Console.WriteLine($"Sesion iniciada: {account.IDAccount}, Token de sesion creado: {session.IDSession} ({session.SessionToken}) @ {session.LastLogin.ToLocalTime().ToLongTimeString()}");
                 }
                 return Redirect(Url.Action("Index", "Feed"));
             }

@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="~/css/social-site.css" />
 </head>
 
+@{
+    Models.Endpoint.Session session = null;
+    Models.Endpoint.Account account = null;
+
+    session = ViewData["session"] as Models.Endpoint.Session;
+    account = ViewData["account"] as Models.Endpoint.Account;
+}
+
 <body class="text-center">
     <header>
         <nav class="navbar navbar-expand-lg mnav">
@@ -24,6 +32,20 @@
                 <a class="brand" href="@Url.Action("","")">AM</a>
             </div>
             <div class="col-md-4 mobile-hidden">
+                @if (session == null) {
+                    <ul class="navbar-nav mr-auto mnav-left">
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Login", "Identity")">Iniciar sesion</a>
+                        </li>
+                    </ul>
+                }
+                @if (session != null && account != null) {
+                    <ul class="navbar-nav mr-auto mnav-left">
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Logout", "Identity", new { sessionToken = session.SessionToken })">Cerrar sesion</a>
+                        </li>
+                    </ul>
+                }
                 @* <ul class="navbar-nav mr-auto mnav-left">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Mi perfil</a>

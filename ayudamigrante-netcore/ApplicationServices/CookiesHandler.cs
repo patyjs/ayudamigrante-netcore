@@ -10,9 +10,11 @@ namespace ayudamigrante_netcore.ApplicationServices
 
         /// <summary> Obtiene el valor de una Cookie determinada del cliente </summary>
         public static string GetValue(HttpRequest req, string key) => req.Cookies.Single(x => x.Key == key).Value;
-        public static void AddCookie(string key, string value)
-        {
+        public static void AddCookie(HttpContext context, string key, string value) => context.Response.Cookies.Append(key, value);
 
+        public static void ClearCookie(HttpContext context, string key)
+        {
+            context.Response.Cookies.Delete(key);
         }
     }
 }

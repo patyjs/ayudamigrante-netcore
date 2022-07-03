@@ -13,15 +13,15 @@
         <span class="span"></span>
 
         <div>
-            @using (Html.BeginForm("", "Identity", FormMethod.Post, new { @class="flex-col margin-top-16" }))
+            @using (Html.BeginForm("SubmitLogin", "Identity", FormMethod.Post, new { @class="flex-col margin-top-16" }))
             {
                 <div class="flex-row-responsive">
                     <label class="flex-30 text-left bold">Correo electronico</label>
-                    <input type="email" class="form-control flex-70" placeholder="your@@email.com"/>
+                    <input type="email" class="form-control flex-70" name="email" placeholder="your@@email.com"/>
                 </div>
                 <div class="flex-row-responsive margin-top-8">
                     <label class="flex-30 text-left bold">Contraseña</label>
-                    <input type="password" class="form-control flex-70" placeholder="********"/>
+                    <input type="password" class="form-control flex-70" name="password" placeholder="********"/>
                 </div>
                 <p class="margin-top-8">Olvidaste tu contraseña? <a href="#"><b>Haz click aqui</b></a> Para recuperar tu cuenta</p>
                 
