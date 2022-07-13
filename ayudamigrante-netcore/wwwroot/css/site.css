@@ -365,3 +365,10 @@ body {
         font-size: 14pt;
         font-weight: 300;
     }
+
+    .fuente-personalizada {
+        font-family: "Reenie Beanie", cursive;
+        font-family: 'Square Peg', cursive !important;
+        font-size: 48pt;
+        font-weight: 700;
+    }

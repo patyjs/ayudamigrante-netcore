@@ -41,7 +41,7 @@ namespace Repositories
         {
             using (var db = new Context())
             {
-                return db.Sessions.Single(predicate);
+                return db.Sessions.SingleOrDefault(predicate);
             }
         }
 

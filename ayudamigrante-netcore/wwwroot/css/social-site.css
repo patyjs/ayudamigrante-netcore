@@ -151,7 +151,9 @@ main {
 }
 
 /* ESTILOS GENERALES */
-
+.fuente-personalizada {
+    font-family: "Homemade Apple" !important;
+}
 textarea {
     border: 0px !important;
 }

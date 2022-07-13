@@ -56,15 +56,22 @@ namespace ayudamigrante_netcore.Controllers
             return View();
         }
 
-        public IActionResult Logout(string sessionToken)
+        public IActionResult Logout()
         {
-            Session session = RepositorySession.Get(x => x.SessionToken == sessionToken);
-            session.SessionToken = null;
-            RepositorySession.AddOrUpdate(session);
+            if (CookiesHandler.CookieExist(Request, "sessionToken") && CookiesHandler.CookieExist(Request, "idAccount"))
+                if(RepositorySession.OnSession(CookiesHandler.GetValue(Request, "sessionToken"), CookiesHandler.GetValue(Request, "idAccount")))
+                {
+                    Console.WriteLine($"Session activa: {CookiesHandler.GetValue(Request, "sessionToken")}, cerrando session de la cuenta");
 
-            CookiesHandler.ClearCookie(HttpContext, "sessionToken");
-            CookiesHandler.ClearCookie(HttpContext, "idAccount");
+                    Session session = RepositorySession.Get(x => x.SessionToken == CookiesHandler.GetValue(Request, "sessionToken"));
+                    session.SessionToken = null;
+                    RepositorySession.AddOrUpdate(session);
 
+                    CookiesHandler.ClearCookie(HttpContext, "sessionToken");
+                    CookiesHandler.ClearCookie(HttpContext, "idAccount");
+                    Console.WriteLine("Session cerrada correctamente");
+                }
+            
             return Redirect(Url.Action("Index", "Home"));
         }
 
