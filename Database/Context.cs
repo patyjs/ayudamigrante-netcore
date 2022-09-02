@@ -25,9 +25,9 @@ namespace Database
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 #if DEBUG
-            optionsBuilder.UseMySQL("server=localhost; port=3306; database=ayudamigrante-DEBUG; user=root; password=Ragnarok1");
+            optionsBuilder.UseMySql("server=localhost; port=3306; database=ayudamigrante-DEBUG; user=root; password=Ragnarok1", ServerVersion.AutoDetect("server=localhost; port=3306; database=ayudamigrante-DEBUG; user=root; password=Ragnarok1"), null);
 #else
-            optionsBuilder.UseMySQL("server=localhost; port=3306; database=ayudamigrante-PROD; user=root; password=Ragnarok1");
+            optionsBuilder.UseMySQL("server=localhost; port=3306; database=ayudamigrante-PROD; user=root; password=Ragnarok1", ServerVersion.AutoDetect("server=localhost; port=3306; database=ayudamigrante-PROD; user=root; password=Ragnarok1"), null);
 #endif
         }
 
