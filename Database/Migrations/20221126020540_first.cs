@@ -1,65 +1,86 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
+#nullable disable
+
 namespace Database.Migrations
 {
-    public partial class initial : Migration
+    public partial class first : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.AlterDatabase()
+                .Annotation("MySql:CharSet", "utf8mb4");
+
             migrationBuilder.CreateTable(
                 name: "Post",
                 columns: table => new
                 {
-                    IDPost = table.Column<string>(type: "varchar(767)", nullable: false),
-                    IDAccount = table.Column<string>(type: "text", nullable: false),
-                    DateTimeUTC = table.Column<DateTime>(type: "datetime", nullable: false),
-                    Body = table.Column<string>(type: "text", nullable: false)
+                    IDPost = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    IDAccount = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    DateTimeUTC = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    Body = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Post", x => x.IDPost);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "Session",
                 columns: table => new
                 {
-                    IDSession = table.Column<string>(type: "varchar(767)", nullable: false),
-                    IDAccount = table.Column<string>(type: "text", nullable: false),
-                    SessionToken = table.Column<string>(type: "text", nullable: true),
-                    LastLogin = table.Column<DateTime>(type: "datetime", nullable: false)
+                    IDSession = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    IDAccount = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    SessionToken = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    LastLogin = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Session", x => x.IDSession);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "UserRol",
                 columns: table => new
                 {
-                    IDUserRol = table.Column<string>(type: "varchar(767)", nullable: false),
+                    IDUserRol = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     UserLevel = table.Column<int>(type: "int", nullable: false),
-                    UserRolName = table.Column<string>(type: "text", nullable: false),
-                    UserRolPermisions = table.Column<string>(type: "text", nullable: false)
+                    UserRolName = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    UserRolPermisions = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_UserRol", x => x.IDUserRol);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "Account",
                 columns: table => new
                 {
-                    IDAccount = table.Column<string>(type: "varchar(767)", nullable: false),
-                    Email = table.Column<string>(type: "varchar(150)", maxLength: 150, nullable: false),
-                    PasswordHash = table.Column<string>(type: "text", nullable: false),
-                    IDUserRol = table.Column<string>(type: "varchar(767)", nullable: false),
+                    IDAccount = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Email = table.Column<string>(type: "varchar(150)", maxLength: 150, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    PasswordHash = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    IDUserRol = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     IsVerified = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     RequirePasswordReset = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime", nullable: false)
+                    CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -70,14 +91,17 @@ namespace Database.Migrations
                         principalTable: "UserRol",
                         principalColumn: "IDUserRol",
                         onDelete: ReferentialAction.Cascade);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "AccountPost",
                 columns: table => new
                 {
-                    LikedPostsIDPost = table.Column<string>(type: "varchar(767)", nullable: false),
-                    LikesIDAccount = table.Column<string>(type: "varchar(767)", nullable: false)
+                    LikedPostsIDPost = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    LikesIDAccount = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
@@ -94,17 +118,22 @@ namespace Database.Migrations
                         principalTable: "Post",
                         principalColumn: "IDPost",
                         onDelete: ReferentialAction.Cascade);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "Comment",
                 columns: table => new
                 {
-                    IDComment = table.Column<string>(type: "varchar(767)", nullable: false),
-                    IDAccount = table.Column<string>(type: "varchar(767)", nullable: false),
-                    IDPost = table.Column<string>(type: "varchar(767)", nullable: false),
-                    DateTimeUTC = table.Column<DateTime>(type: "datetime", nullable: false),
-                    Content = table.Column<string>(type: "text", nullable: false)
+                    IDComment = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    IDAccount = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    IDPost = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    DateTimeUTC = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    Content = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
@@ -121,20 +150,28 @@ namespace Database.Migrations
                         principalTable: "Post",
                         principalColumn: "IDPost",
                         onDelete: ReferentialAction.Cascade);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "Profile",
                 columns: table => new
                 {
-                    IDProfile = table.Column<string>(type: "varchar(767)", nullable: false),
-                    IDAccount = table.Column<string>(type: "varchar(767)", nullable: false),
-                    Name = table.Column<string>(type: "text", nullable: false),
-                    LastName = table.Column<string>(type: "text", nullable: true),
-                    Gender = table.Column<string>(type: "text", nullable: true),
-                    AboutMe = table.Column<string>(type: "text", nullable: true),
-                    OriginCity = table.Column<string>(type: "text", nullable: true),
-                    BirthDay = table.Column<DateTime>(type: "datetime", nullable: false)
+                    IDProfile = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    IDAccount = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Name = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    LastName = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Gender = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    AboutMe = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    OriginCity = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    BirthDay = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -145,7 +182,8 @@ namespace Database.Migrations
                         principalTable: "Account",
                         principalColumn: "IDAccount",
                         onDelete: ReferentialAction.Cascade);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.InsertData(
                 table: "UserRol",
@@ -160,7 +198,7 @@ namespace Database.Migrations
             migrationBuilder.InsertData(
                 table: "Account",
                 columns: new[] { "IDAccount", "CreatedAt", "Email", "IDUserRol", "IsVerified", "PasswordHash", "RequirePasswordReset" },
-                values: new object[] { "38B9F907-5961-4589-90E8-9EC020B7D40D", new DateTime(2022, 6, 18, 18, 19, 11, 564, DateTimeKind.Utc).AddTicks(5036), "angel.g.j.reyes@gmail.com", "38B9F907-5961-4589-90E8-9EC020B7D40D", true, "40a914448eff394e9cb44b9042f2e48c52727a49a7ff2f5062bd199014003645", false });
+                values: new object[] { "38B9F907-5961-4589-90E8-9EC020B7D40D", new DateTime(2022, 11, 26, 2, 5, 39, 789, DateTimeKind.Utc).AddTicks(2496), "angel.g.j.reyes@gmail.com", "38B9F907-5961-4589-90E8-9EC020B7D40D", true, "40a914448eff394e9cb44b9042f2e48c52727a49a7ff2f5062bd199014003645", false });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Account_Email",

@@ -6,26 +6,28 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
+#nullable disable
+
 namespace Database.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220618181912_initial")]
-    partial class initial
+    [Migration("20221126020540_first")]
+    partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 64)
-                .HasAnnotation("ProductVersion", "5.0.10");
+                .HasAnnotation("ProductVersion", "6.0.7")
+                .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("AccountPost", b =>
                 {
                     b.Property<string>("LikedPostsIDPost")
-                        .HasColumnType("varchar(767)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("LikesIDAccount")
-                        .HasColumnType("varchar(767)");
+                        .HasColumnType("varchar(255)");
 
                     b.HasKey("LikedPostsIDPost", "LikesIDAccount");
 
@@ -37,10 +39,10 @@ namespace Database.Migrations
             modelBuilder.Entity("Models.Endpoint.Account", b =>
                 {
                     b.Property<string>("IDAccount")
-                        .HasColumnType("varchar(767)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -49,14 +51,14 @@ namespace Database.Migrations
 
                     b.Property<string>("IDUserRol")
                         .IsRequired()
-                        .HasColumnType("varchar(767)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<bool>("IsVerified")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("PasswordHash")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.Property<bool>("RequirePasswordReset")
                         .HasColumnType("tinyint(1)");
@@ -68,13 +70,13 @@ namespace Database.Migrations
 
                     b.HasIndex("IDUserRol");
 
-                    b.ToTable("Account");
+                    b.ToTable("Account", (string)null);
 
                     b.HasData(
                         new
                         {
                             IDAccount = "38B9F907-5961-4589-90E8-9EC020B7D40D",
-                            CreatedAt = new DateTime(2022, 6, 18, 18, 19, 11, 564, DateTimeKind.Utc).AddTicks(5036),
+                            CreatedAt = new DateTime(2022, 11, 26, 2, 5, 39, 789, DateTimeKind.Utc).AddTicks(2496),
                             Email = "angel.g.j.reyes@gmail.com",
                             IDUserRol = "38B9F907-5961-4589-90E8-9EC020B7D40D",
                             IsVerified = true,
@@ -86,22 +88,22 @@ namespace Database.Migrations
             modelBuilder.Entity("Models.Endpoint.Comment", b =>
                 {
                     b.Property<string>("IDComment")
-                        .HasColumnType("varchar(767)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Content")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime>("DateTimeUTC")
-                        .HasColumnType("datetime");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("IDAccount")
                         .IsRequired()
-                        .HasColumnType("varchar(767)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("IDPost")
                         .IsRequired()
-                        .HasColumnType("varchar(767)");
+                        .HasColumnType("varchar(255)");
 
                     b.HasKey("IDComment");
 
@@ -109,104 +111,104 @@ namespace Database.Migrations
 
                     b.HasIndex("IDPost");
 
-                    b.ToTable("Comment");
+                    b.ToTable("Comment", (string)null);
                 });
 
             modelBuilder.Entity("Models.Endpoint.Post", b =>
                 {
                     b.Property<string>("IDPost")
-                        .HasColumnType("varchar(767)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Body")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime>("DateTimeUTC")
-                        .HasColumnType("datetime");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("IDAccount")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.HasKey("IDPost");
 
-                    b.ToTable("Post");
+                    b.ToTable("Post", (string)null);
                 });
 
             modelBuilder.Entity("Models.Endpoint.Profile", b =>
                 {
                     b.Property<string>("IDProfile")
-                        .HasColumnType("varchar(767)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("AboutMe")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime>("BirthDay")
-                        .HasColumnType("datetime");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Gender")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("IDAccount")
                         .IsRequired()
-                        .HasColumnType("varchar(767)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("LastName")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("OriginCity")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.HasKey("IDProfile");
 
                     b.HasIndex("IDAccount");
 
-                    b.ToTable("Profile");
+                    b.ToTable("Profile", (string)null);
                 });
 
             modelBuilder.Entity("Models.Endpoint.Session", b =>
                 {
                     b.Property<string>("IDSession")
-                        .HasColumnType("varchar(767)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("IDAccount")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime>("LastLogin")
-                        .HasColumnType("datetime");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("SessionToken")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.HasKey("IDSession");
 
-                    b.ToTable("Session");
+                    b.ToTable("Session", (string)null);
                 });
 
             modelBuilder.Entity("Models.Endpoint.UserRol", b =>
                 {
                     b.Property<string>("IDUserRol")
-                        .HasColumnType("varchar(767)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<int>("UserLevel")
                         .HasColumnType("int");
 
                     b.Property<string>("UserRolName")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("UserRolPermisions")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.HasKey("IDUserRol");
 
-                    b.ToTable("UserRol");
+                    b.ToTable("UserRol", (string)null);
 
                     b.HasData(
                         new
