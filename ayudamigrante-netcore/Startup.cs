@@ -17,6 +17,11 @@ namespace ayudamigrante_netcore
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+            Console.WriteLine($"DATABASE_HOST={Environment.GetEnvironmentVariable("DATABASE_HOST")}");
+            Console.WriteLine($"DATABASE_PORT={Environment.GetEnvironmentVariable("DATABASE_PORT")}");
+            Console.WriteLine($"DATABASE_ACCOUNT={Environment.GetEnvironmentVariable("DATABASE_ACCOUNT")}");
+            Console.WriteLine($"DATABASE_PASSWRD={Environment.GetEnvironmentVariable("DATABASE_PASSWRD")}");
         }
 
         public IConfiguration Configuration { get; }
@@ -27,6 +32,7 @@ namespace ayudamigrante_netcore
             services.AddServerSideBlazor();
             services.AddControllersWithViews();
             services.AddMvc().AddRazorRuntimeCompilation();
+            // services.AddDbContext<Database.Context>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

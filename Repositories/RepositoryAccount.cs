@@ -91,7 +91,7 @@ namespace Repositories
         {
             using (var db = new Context())
             {
-                var account = db.Accounts.Single(x => x.Email == email);
+                var account = db.Accounts.SingleOrDefault(x => x.Email == email);
                 return account.PasswordHash == Security.SHA256Hash(value) ? true : false;
             }
         }

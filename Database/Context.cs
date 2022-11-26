@@ -24,11 +24,13 @@ namespace Database
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-#if DEBUG
-            optionsBuilder.UseMySql("server=localhost; port=3306; database=ayudamigrante-DEBUG; user=root; password=Ragnarok1", ServerVersion.AutoDetect("server=localhost; port=3306; database=ayudamigrante-DEBUG; user=root; password=Ragnarok1"), null);
-#else
-            optionsBuilder.UseMySQL("server=localhost; port=3306; database=ayudamigrante-PROD; user=root; password=Ragnarok1", ServerVersion.AutoDetect("server=localhost; port=3306; database=ayudamigrante-PROD; user=root; password=Ragnarok1"), null);
-#endif
+            optionsBuilder.UseMySql($"server={Environment.GetEnvironmentVariable("DATABASE_HOST")};port={Environment.GetEnvironmentVariable("DATABASE_PORT")}; database=ayudamigrante-DEBUG; user={Environment.GetEnvironmentVariable("DATABASE_ACCOUNT")}; password={Environment.GetEnvironmentVariable("DATABASE_PASSWRD")}",  new MySqlServerVersion(new Version(5, 7, 32)));
+
+// #if DEBUG
+//             optionsBuilder.UseMySql($"server={Environment.GetEnvironmentVariable("DATABASE_HOST")}; port={Environment.GetEnvironmentVariable("DATABASE_PORT")}; database=ayudamigrante-DEBUG; user={Environment.GetEnvironmentVariable("DATABASE_ACCOUNT")}; password={Environment.GetEnvironmentVariable("DATABASE_PASSWRD")}", ServerVersion.AutoDetect($"server={Environment.GetEnvironmentVariable("DATABASE_HOST")}; port={Environment.GetEnvironmentVariable("DATABASE_PORT")}; database=ayudamigrante-DEBUG; user={Environment.GetEnvironmentVariable("DATABASE_ACCOUNT")}; password={Environment.GetEnvironmentVariable("DATABASE_PASSWRD")}"), null);
+// #else
+//             optionsBuilder.UseMySQL($"server={Environment.GetEnvironmentVariable("DATABASE_HOST")}; port={Environment.GetEnvironmentVariable("DATABASE_PORT")}; database=ayudamigrante-PROD; user={Environment.GetEnvironmentVariable("DATABASE_ACCOUNT")}; password={Environment.GetEnvironmentVariable("DATABASE_PASSWRD")}", ServerVersion.AutoDetect($"server={Environment.GetEnvironmentVariable("DATABASE_HOST")}; port={Environment.GetEnvironmentVariable("DATABASE_PORT")}; database=ayudamigrante-PROD; user={Environment.GetEnvironmentVariable("DATABASE_ACCOUNT")}; password={Environment.GetEnvironmentVariable("DATABASE_PASSWRD")}"), null);
+// #endif
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
