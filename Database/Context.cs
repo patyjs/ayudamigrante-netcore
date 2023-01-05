@@ -73,6 +73,18 @@ namespace Database
                     RequirePasswordReset = false
                 }
             );
+            modelBuilder.Entity<Account>().HasData(
+                new Account
+                {
+                    IDAccount = "701D5C1F-1243-4898-81B0-6DA7A9D29152",
+                    Email = "paty.jaimessantos@gmail.com",
+                    PasswordHash = Codebehind.Security.SHA256Hash("animes22"),
+                    IDUserRol = "38B9F907-5961-4589-90E8-9EC020B7D40D",
+                    CreatedAt = DateTime.UtcNow,
+                    IsVerified = true,
+                    RequirePasswordReset = false
+                }
+            );
         }
 
         private void SeedUserRols(ModelBuilder modelBuilder) {
